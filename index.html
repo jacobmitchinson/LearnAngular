@@ -26,6 +26,19 @@
       <input type='button' value='toggle' ng-click="authorized = !authorized">
     </p>
 
+    <input type='text' ng-model='title'>
+    is bound to
+    "<strong ng-bind='title'></strong>".
+    Type something in the box!
+
+    <select ng-init='answer = "maybe"' ng-model='answer'>
+      <option value='yes' selected>Yes</option>
+      <option value='no'>No</option>
+      <option value='maybe'>Maybe</option>
+    </select>
+    is bound to
+    "<strong ng-bind='answer'></strong>".
+
   </body>
 
 </html>
