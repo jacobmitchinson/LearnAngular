@@ -8,11 +8,24 @@
 
   <body ng-app>
 
-    <p ng-init="jake = 'hi there'">
+    <p ng-init="jake = 'hi there'; dave = 'hi jake'">
       {{jake}}
+      {{dave}}
       3 + 2 = {{ a = 1; a * 5 }}
     </p>
   
+    <p ng-init="myObject = { jake: 'hi there'}">
+      {{myObject.jake}}
+    </p>
+
+    <p ng-init='authorized = true'>
+      The secret code is
+      <span ng-show='authorized'>0123</span>
+      <span ng-hide='authorized'>Not authorized</span>
+      <br>
+      <input type='button' value='toggle' ng-click="authorized = !authorized">
+    </p>
+
   </body>
 
 </html>
