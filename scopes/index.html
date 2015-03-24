@@ -9,6 +9,7 @@
     <script src="name-controller.js"></script>
     <script src="second-name-controller.js"></script>
     <script src='scope-testing-controller.js'></script>
+    <script src='escape-controller.js'></script>
   </head> 
 
   <body ng-app='app'> 
@@ -36,6 +37,13 @@
       <input type="button" value="Add" ng-click="add()">
       {{number}}
       {{number3}}
+    </p>
+
+    <p ng-controller='EscapeController'>
+      <input type='text' ng-model='message'>
+      is bound to
+      "<strong ng-bind='message'></strong>"
+      Press <code>esc</code> to clear it.
     </p>
 
   </body> 
