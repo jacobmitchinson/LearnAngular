@@ -15,6 +15,27 @@
       <li ng-bind='item.name'></li>
     </ol>
 
+    <table class='table table-condensed'>
+      <tr ng-repeat=" (propertyName, propertyValue) in {b: 'two', a: 1.0, c: 3}">
+        <td ng-bind='propertyName'></td>
+        <td ng-bind='propertyValue'></td>
+      </tr>
+    </table>
+
+    <div ng-controller='ItemsController'> 
+      <div ng-repeat='item in items'>
+        {{$index + 1}}. {{item.name}}
+      </div>
+    </div>
+
+    <div ng-controller='ItemsController'>
+      <div ng-repeat='item in items'>
+        {{item.name}}
+        <div ng-repeat='item in item.items'>
+          {{$index + 1}}. {{item.name}}
+        </div>
+      </div>
+    </div>
   </body>
 
 
