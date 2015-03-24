@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html>
+
+  <head>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js'></script>
+    <script src='module.js'></script>
+    <script src='root-name-controller.js'></script>
+    <script src='clashing-name-controller.js'></script>
+    <script src="name-controller.js"></script>
+    <script src="second-name-controller.js"></script>
+    <script src='scope-testing-controller.js'></script>
+  </head> 
+
+  <body ng-app='app'> 
+
+    <p ng-controller='FirstRootNameController'>
+      {{name}}
+    </p>
+
+    <p ng-controller='SecondRootNameController'> 
+      {{name}} 
+      <!-- ouch -->
+    </p>
+
+    <p ng-controller='NameController'> 
+      {{name}}
+    </p>
+
+    <p ng-controller='SecondNameController'>
+      {{name}}
+      <!-- yay -->
+    </p>
+
+    <p ng-controller='ScopeTest'>
+      <select ng-model="newValue" ng-options="n for n in [1,2,3]"></select>
+      <input type="button" value="Add" ng-click="add()">
+      {{number}}
+      {{number3}}
+    </p>
+
+  </body> 
+
+
+</html>
